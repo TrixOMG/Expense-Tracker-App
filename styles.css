@@ -3,3 +3,81 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #1e2021;
+  color: #e8e6e3;
+  display: flex;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-one {
+  font-size: 40px;
+}
+
+.total-expense {
+  margin-top: 1rem;
+}
+
+.app-container {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #181a1b;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+.input-container {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+.input {
+  margin: 10px;
+  font-size: 1.2rem;
+  width: 20rem;
+  height: 2rem;
+}
+
+.button {
+  font-size: 1.5rem;
+  border-radius: 5px;
+  margin: 0 50px 50px 50px;
+}
+
+.submit {
+  background-color: #2e8b57;
+}
+
+.delete {
+  background-color: #b22222;
+}
+
+@media (max-width: 800px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .input-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .button {
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin: 0 20px 10px 20px;
+  }
+
+  .input {
+    margin: 5px;
+    font-size: 1rem;
+    width: 15rem;
+    height: 1.5rem;
+  }
+}
