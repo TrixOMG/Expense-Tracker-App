@@ -58,6 +58,25 @@ body {
   background-color: #b22222;
 }
 
+.expense-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.table {
+  table-layout: fixed;
+  width: 50%;
+  font-size: 1.3rem;
+}
+
+.table,
+th,
+td {
+  border: 2px solid #e8e6e3;
+  border-collapse: collapse;
+}
+
 @media (max-width: 800px) {
   body {
     font-size: 1rem;
@@ -79,5 +98,10 @@ body {
     font-size: 1rem;
     width: 15rem;
     height: 1.5rem;
+  }
+
+  .table {
+    width: 90%;
+    font-size: 1.1rem;
   }
 }
