@@ -11,23 +11,23 @@
     <div class="app-container">
       <h1 class="header-one">Expense Tracker App</h1>
       <p class="total-expense">Total Expense: $</p>
-      <div class="input-container">
+      <form id="form" class="input-container">
         <input
           type="text"
           class="input"
-          id="expense-input"
+          id="expense-name"
           placeholder="Type your expense name here..."
         />
         <input
           type="text"
           class="input"
-          id="value-input"
+          id="expense-value"
           placeholder="Type your $ here..."
         />
-        <button class="button submit" id="add-button">Add</button>
+        <button type="submit" class="button submit" id="add-button">Add</button>
         <button class="button delete" id="clear-button">Clear All</button>
-      </div>
-      <div class="expense-container" id="expense-container">
+      </form>
+      <section class="expense-container" id="expense-container">
         <table class="table" id="expense-table">
           <thead>
             <tr>
@@ -35,9 +35,11 @@
               <th>Amount</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            <td colspan="2">No Expenses Yet!</td>
+          </tbody>
         </table>
-      </div>
+      </section>
     </div>
     <script src="./index.js"></script>
   </body>
