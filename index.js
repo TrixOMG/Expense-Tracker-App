@@ -25,11 +25,12 @@ document.getElementById("form").addEventListener("submit", function (e) {
 });
 
 const showExpenses = () => {
-  const expenseTable = document.getElementById("table");
+  const expenseTable = document.getElementById("expense-table");
   expenseTable.innerHTML = "";
 
   if (expenses.length > 0) {
-    expenseTable.appendChild(createDataRow(expenses[i]));
+    for (let i = 0; i < expenses.length; i++)
+      expenseTable.appendChild(createDataRow(expenses[i]));
   } else {
     expenseTable.appendChild(createEmptyRow());
   }
@@ -49,7 +50,25 @@ const createEmptyRow = () => {
 
 const createDataRow = (expense) => {
   const expenseRowElement = document.createElement("TR");
-  const expenseTDElement = document.createElement("TD");
 
+  const expenseTDNameElement = document.createElement("TD");
+  expenseTDNameElement.textContent = expense.expenseName;
+  expenseRowElement.appendChild(expenseTDNameElement);
 
+  const expenseTDValueElement = document.createElement("TD");
+  expenseTDValueElement.textContent = expense.expenseValue;
+
+  const deleteAnchorElement = document.createElement("A");
+  deleteAnchorElement.className = "delete-button";
+
+  deleteAnchorElement.onclick = function (e) {
+    deleteExpense(expense.id);
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+    showExpenses();
+  };
+
+  deleteAnchorElement.textContent = "Delete";
+  expenseRowElement.appendChild(deleteAnchorElement);
+
+  return expenseRowElement;
 };
